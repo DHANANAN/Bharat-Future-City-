@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Moon, Sun } from "lucide-react"
+import { useTheme } from "@/hooks/useTheme"
 
 const sections = [
   { id: "executive-summary", label: "Overview" },
@@ -14,6 +15,7 @@ const sections = [
 ]
 
 export function ReportNav() {
+  const { theme, toggleTheme } = useTheme()
   const [activeSection, setActiveSection] = useState("executive-summary")
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -96,16 +98,29 @@ export function ReportNav() {
           ))}
         </div>
 
-        {/* Mobile menu toggle */}
-        <button
-          type="button"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden p-2 cursor-pointer"
-          aria-label="Toggle navigation"
-          style={{ color: "var(--primary)" }}
-        >
-          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
+        {/* Theme toggle + Mobile menu */}
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="p-2 cursor-pointer hover:opacity-80 transition-opacity smooth-transition"
+            aria-label="Toggle theme"
+            style={{ color: "var(--primary)" }}
+          >
+            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+
+          {/* Mobile menu toggle */}
+          <button
+            type="button"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="md:hidden p-2 cursor-pointer"
+            aria-label="Toggle navigation"
+            style={{ color: "var(--primary)" }}
+          >
+            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile dropdown */}

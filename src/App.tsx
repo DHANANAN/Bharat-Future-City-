@@ -1,5 +1,7 @@
 
-import React from "react"
+import React, { useEffect } from "react"
+import { ThemeProvider } from "@/components/theme-provider"
+import { SpaceInteractiveWrapper } from "@/components/space-interactive-wrapper"
 import { ReportNav } from "@/components/report/report-nav"
 import { HeroSection } from "@/components/report/hero-section"
 import { SectionWrapper } from "@/components/report/section-wrapper"
@@ -17,7 +19,7 @@ import { EconomicComparisonTable } from "@/components/report/economic-comparison
 import { ReportFooter } from "@/components/report/report-footer"
 import { LitigationSection } from "@/components/report/litigation-section"
 
-export default function Page() {
+function AppContent() {
   return (
     <main>
       <ReportNav />
@@ -277,5 +279,14 @@ export default function Page() {
       {/* ============================================================ */}
       <ReportFooter />
     </main>
+  )
+}
+export default function App() {
+  return (
+    <ThemeProvider defaultTheme="dark">
+      <SpaceInteractiveWrapper>
+        <AppContent />
+      </SpaceInteractiveWrapper>
+    </ThemeProvider>
   )
 }
