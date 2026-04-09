@@ -1,5 +1,33 @@
 @import 'tailwindcss';
 
+:root {
+  --background: #0a0e27;
+  --foreground: #e0e6ff;
+  --card: rgba(15, 23, 42, 0.6);
+  --card-foreground: #e0e6ff;
+  --primary: #6366f1;
+  --primary-foreground: #ffffff;
+  --accent: #818cf8;
+  --accent-foreground: #1e293b;
+  --border: rgba(99, 102, 241, 0.2);
+  --muted: #334155;
+  --muted-foreground: #cbd5e1;
+}
+
+html.light {
+  --background: #fff8f0;
+  --foreground: #1a1410;
+  --card: rgba(255, 250, 245, 0.8);
+  --card-foreground: #1a1410;
+  --primary: #d4a574;
+  --primary-foreground: #ffffff;
+  --accent: #f4b860;
+  --accent-foreground: #1a1410;
+  --border: rgba(212, 165, 116, 0.2);
+  --muted: #e8dcc8;
+  --muted-foreground: #8b7355;
+}
+
 @keyframes sparkleFloat {
   0% {
     opacity: 1;

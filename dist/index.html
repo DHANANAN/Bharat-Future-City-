@@ -15,8 +15,18 @@
         --font-jetbrains-mono: 'JetBrains Mono', monospace;
       }
     </style>
-    <script type="module" crossorigin src="/assets/index-B_Xi17l6.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CP1zvOKI.css">
+    <script>
+      (function() {
+        try {
+          const theme = localStorage.getItem('theme') || 'dark'
+          document.documentElement.classList.add(theme)
+        } catch (e) {
+          document.documentElement.classList.add('dark')
+        }
+      })()
+    </script>
+    <script type="module" crossorigin src="/assets/index-DlVITRfQ.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-PneI_NJD.css">
   </head>
   <body class="font-sans antialiased">
     <div id="root"></div>

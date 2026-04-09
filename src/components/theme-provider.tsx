@@ -18,33 +18,34 @@ export function ThemeProvider({
   children, 
   defaultTheme = 'dark' 
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(defaultTheme)
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    // Load theme from localStorage on mount
-    const stored = localStorage.getItem('theme') as Theme | null
-    if (stored && (stored === 'light' || stored === 'dark')) {
-      setTheme(stored)
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === 'undefined') return defaultTheme
+    try {
+      const stored = localStorage.getItem('theme') as Theme | null
+      if (stored && (stored === 'light' || stored === 'dark')) {
+        return stored
+      }
+    } catch (e) {
+      // localStorage not available
     }
-    setMounted(true)
-  }, [])
+    return defaultTheme
+  })
 
   useEffect(() => {
-    if (!mounted) return
-    
+    // Apply theme immediately
     const root = document.documentElement
     root.classList.remove('light', 'dark')
     root.classList.add(theme)
-    localStorage.setItem('theme', theme)
-  }, [theme, mounted])
+    
+    try {
+      localStorage.setItem('theme', theme)
+    } catch (e) {
+      // localStorage not available
+    }
+  }, [theme])
 
   const toggleTheme = () => {
     setTheme(prev => prev === 'light' ? 'dark' : 'light')
-  }
-
-  if (!mounted) {
-    return <>{children}</>
   }
 
   return (
