@@ -31,10 +31,10 @@ export function HeroSection() {
 
       {/* Accent corner mark */}
       <div
-        className="absolute top-8 left-6 md:left-8 flex items-center gap-3"
+        className="absolute top-8 left-6 md:left-8 flex items-center gap-3 hidden md:flex"
         style={{
           opacity: visible ? 1 : 0,
-          transition: "opacity 0.8s ease 0.2s",
+          transition: "opacity 1.2s ease 0.2s",
         }}
       >
         <div className="w-2 h-2" style={{ backgroundColor: "var(--accent)" }} />
@@ -52,7 +52,7 @@ export function HeroSection() {
           style={{
             opacity: visible ? 1 : 0,
             transform: visible ? "translateY(0)" : "translateY(30px)",
-            transition: "all 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s",
+            transition: "all 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.4s",
           }}
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-primary leading-[0.95] text-balance">
@@ -72,7 +72,7 @@ export function HeroSection() {
           style={{
             backgroundColor: "var(--border)",
             opacity: visible ? 1 : 0,
-            transition: "opacity 0.8s ease 0.8s",
+            transition: "opacity 1.2s ease 1.1s",
           }}
         />
 
@@ -82,7 +82,7 @@ export function HeroSection() {
           style={{
             opacity: visible ? 1 : 0,
             transform: visible ? "translateY(0)" : "translateY(20px)",
-            transition: "all 0.8s ease 0.9s",
+            transition: "all 1.2s ease 1.3s",
           }}
         >
           <p className="text-base md:text-lg leading-relaxed" style={{ color: "var(--muted-foreground)" }}>
@@ -98,7 +98,7 @@ export function HeroSection() {
           style={{
             opacity: visible ? 1 : 0,
             transform: visible ? "translateY(0)" : "translateY(20px)",
-            transition: "all 0.8s ease 1.1s",
+            transition: "all 1.4s ease 1.6s",
           }}
         >
           <HeroMetrics />
@@ -109,7 +109,7 @@ export function HeroSection() {
           className="mt-14"
           style={{
             opacity: visible ? 1 : 0,
-            transition: "opacity 0.8s ease 1.3s",
+            transition: "opacity 1.2s ease 1.8s",
           }}
         >
           <p
@@ -157,26 +157,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        style={{
-          opacity: visible ? 1 : 0,
-          transition: "opacity 0.8s ease 1.5s",
-        }}
-      >
-        <span
-          className="font-mono text-xs tracking-wider uppercase"
-          style={{ color: "var(--text-dim)" }}
-        >
-          Scroll
-        </span>
-        <ArrowDown
-          size={16}
-          style={{ color: "var(--text-dim)" }}
-          className="animate-bounce"
-        />
-      </div>
+      {/* Scroll indicator - removed for cleaner UX */}
     </section>
   )
 }

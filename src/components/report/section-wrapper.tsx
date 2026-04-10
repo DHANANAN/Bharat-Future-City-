@@ -66,8 +66,8 @@ export function SectionWrapper({
     >
       <div
         className={cn(
-          "mx-auto max-w-6xl transition-all duration-700 ease-out",
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          "mx-auto max-w-6xl transition-all duration-1000 ease-out",
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
         )}
       >
         {children}
