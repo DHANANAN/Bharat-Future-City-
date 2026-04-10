@@ -7,7 +7,7 @@
 :root {
   /* Light Mode: Sand & Gold with Sun Aesthetic */
   --background: linear-gradient(135deg, #fef5e7 0%, #fef9f0 100%);
-  --foreground: #1a1410;
+  --foreground: #120d09;
   
   --primary: #d4a574;        /* Warm gold/sand */
   --primary-foreground: #1a1410;
@@ -25,7 +25,7 @@
   --popover-foreground: #1a1410;
   
   --muted: #d4c5b9;
-  --muted-foreground: #5a4a3f;
+  --muted-foreground: #46372d;
   
   --destructive: #d97706;
   --destructive-foreground: #ffffff;
@@ -61,7 +61,7 @@
 .dark {
   /* Dark Mode: Night & Constellation Aesthetic */
   --background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
-  --foreground: #e8e4d9;
+  --foreground: #f4f7ff;
   
   --primary: #6b9ed9;        /* Star blue */
   --primary-foreground: #e8e4d9;
@@ -79,7 +79,7 @@
   --popover-foreground: #e8e4d9;
   
   --muted: #546b8c;
-  --muted-foreground: #a8a399;
+  --muted-foreground: #c2c9d6;
   
   --destructive: #ef5350;
   --destructive-foreground: #0a0e27;
@@ -184,6 +184,9 @@ body {
   
   color: var(--foreground);
   font-feature-settings: 'rlig' 1, 'calt' 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Light mode: Add subtle sun glow effect */
@@ -281,26 +284,27 @@ h6 {
 body {
   @apply text-base font-normal leading-relaxed;
   color: var(--foreground);
-  font-weight: 400;
+  font-weight: 450;
 }
 
 p {
   @apply mb-4 leading-relaxed;
   color: var(--foreground);
-  font-weight: 400;
+  font-weight: 450;
 }
 
 /* Small text should still be readable */
 small, .text-sm {
   @apply text-sm font-medium;
   color: var(--foreground);
-  opacity: 0.9;
+  opacity: 0.98;
 }
 
 /* Muted text */
 .text-muted-foreground {
   @apply font-medium;
   color: var(--muted-foreground) !important;
+  opacity: 1;
 }
 
 /* Display/metric text - Extra bold for visibility */
@@ -308,7 +312,7 @@ small, .text-sm {
 .text-metric {
   @apply font-bold tracking-tight;
   color: var(--foreground);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
 }
 
 /* Links - High visibility */
@@ -542,7 +546,7 @@ input:focus, textarea:focus, select:focus {
 .text-strong {
   @apply font-bold;
   color: var(--foreground);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
 }
 
 .bg-gradient-light {
