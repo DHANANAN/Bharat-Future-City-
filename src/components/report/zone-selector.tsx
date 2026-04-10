@@ -131,7 +131,11 @@ const ZONES: ZoneData[] = [
 /* ------------------------------------------------------------------ */
 
 function ZoneIcon({ type, size = 28 }: { type: ZoneData["icon"]; size?: number }) {
-  const props = { size, strokeWidth: 1.5 }
+  const props = {
+    size,
+    strokeWidth: 2,
+    style: { filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.2))" },
+  }
   if (type === "building") return <Building2 {...props} />
   if (type === "factory") return <Factory {...props} />
   return <Wheat {...props} />
@@ -151,7 +155,7 @@ function StatRow({
   return (
     <div className="flex items-start gap-3 py-3 border-b" style={{ borderColor: "var(--border)" }}>
       <div className="mt-0.5 shrink-0" style={{ color }}>
-        <Icon size={16} strokeWidth={1.5} />
+        <Icon size={16} strokeWidth={2} style={{ filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.18))" }} />
       </div>
       <div className="min-w-0">
         <p className="font-mono text-[10px] tracking-widest uppercase" style={{ color: "var(--muted-foreground)" }}>

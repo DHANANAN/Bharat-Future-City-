@@ -301,10 +301,10 @@ export function InfrastructureMap() {
                       borderColor: active ? layer.color : "var(--border)",
                       backgroundColor: active ? `${layer.color}12` : "transparent",
                       color: active ? layer.color : "var(--text-dim)",
-                      opacity: active ? 1 : 0.5,
+                      opacity: active ? 1 : 0.72,
                     }}
                   >
-                    <Icon size={12} />
+                    <Icon size={13} strokeWidth={2.2} />
                     <span className="hidden sm:inline">{layer.label}</span>
                     <span className="sm:hidden">{key === "expressway" ? "Port" : key === "radialRoads" ? "Radial" : key === "ewTrunk" ? "E-W" : layer.label.split(" ")[0]}</span>
                   </button>
@@ -329,14 +329,14 @@ export function InfrastructureMap() {
                 </pattern>
                 {/* Glow filter for highlighted elements */}
                 <filter id="glow">
-                  <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+                  <feGaussianBlur stdDeviation="4" result="coloredBlur" />
                   <feMerge>
                     <feMergeNode in="coloredBlur" />
                     <feMergeNode in="SourceGraphic" />
                   </feMerge>
                 </filter>
                 <filter id="glow-strong">
-                  <feGaussianBlur stdDeviation="5" result="coloredBlur" />
+                  <feGaussianBlur stdDeviation="6" result="coloredBlur" />
                   <feMerge>
                     <feMergeNode in="coloredBlur" />
                     <feMergeNode in="SourceGraphic" />

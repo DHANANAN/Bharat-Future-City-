@@ -14,6 +14,7 @@ import { RiskMatrix } from "@/components/report/risk-matrix"
 import { PhasedRolloutTimeline } from "@/components/report/phased-rollout-timeline"
 import { LandStatusBreakdown } from "@/components/report/land-status-breakdown"
 import { EconomicComparisonTable } from "@/components/report/economic-comparison-table"
+import { LatestUpdatesSection } from "@/components/report/latest-updates-section"
 import { ReportFooter } from "@/components/report/report-footer"
 import { LitigationSection } from "@/components/report/litigation-section"
 
@@ -271,6 +272,14 @@ export default function Page() {
           </p>
         </div>
       </SectionWrapper>
+
+      {/* Divider */}
+      <div className="section-rule" />
+
+      {/* ============================================================ */}
+      {/* SECTION 07: DPR / CONNECTIVITY / RECENT COVERAGE */}
+      {/* ============================================================ */}
+      <LatestUpdatesSection />
 
       {/* ============================================================ */}
       {/* FOOTER */}
